@@ -109,7 +109,7 @@ section.rsvp {
 }
 
 section.features,
-section.events,
+section.itinerario,
 section.blog {
     background: #f8f9fd
 }
@@ -146,7 +146,7 @@ a:focus {
 
 body {
     font-family: "Open Sans", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: rgba(28, 54, 83, .6);
     -webkit-text-size-adjust: 100%
 }
@@ -166,7 +166,7 @@ ul li {
 }
 
 section .header {
-    padding-bottom: 30px
+    padding-bottom: 0px
 }
 
 .section-padding {
@@ -445,7 +445,8 @@ section .header {
     transition: all 300ms ease-in-out;
     position: fixed;
     width: 100%;
-    z-index: 999
+    z-index: 999;
+    background-color: #0000000d;
 }
 
 .fixed {
@@ -475,7 +476,11 @@ header a.login {
 }
 
 header .logo {
-    display: inline-block
+    display: inline-block;
+    background-color: white; /* O el color que elijas */
+    border-radius: 50%; /* Para crear un círculo */
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra opcional */
 }
 
 header .logo img {
@@ -497,7 +502,7 @@ header ul.primary-nav li a {
 }
 
 header ul.primary-nav li a:hover {
-    color: #e8ca6f
+    color: #f57653
 }
 
 header ul.primary-nav li:last-child a {
@@ -523,8 +528,11 @@ header .header-nav {
 header .member-actions {
     position: absolute;
     right: 0;
-    top: 41px;
+    top: 50px;
     transition: all 300ms ease-in-out
+}
+ul .member-actions {
+    top: 50px;
 }
 
 .down-arrow {
@@ -721,16 +729,16 @@ header .member-actions {
     transform: translateX(-50%)
 }
 
-.events .leftcol {
+.itinerario .leftcol {
     padding-right: 100px;
     border-right: solid 1px #e6e9ea
 }
 
-.events .rightcol {
+.itinerario .rightcol {
     padding-left: 100px
 }
 
-.events .time {
+.itinerario .time {
     font-size: 13px;
     font-style: italic;
     text-transform: lowercase;
@@ -977,6 +985,15 @@ header .member-actions {
     border-radius: 3px;
     width: 100%;
     font-size: 13px
+}
+
+.boton-abajo {
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 .rsvp .rsvp-form .form-input-group {
