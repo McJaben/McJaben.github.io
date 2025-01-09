@@ -1,6 +1,9 @@
 @import"https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800";
 @import"https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic";
 @import"https://fonts.googleapis.com/css?family=Nunito:400,300,700";
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Parisienne&display=swap');
+
 
 p {
     font-size: 15px;
@@ -74,20 +77,24 @@ h5 {
 
 .btn-fill {
     color: #fff;
-    border: solid 2px #ee1e52;
+    /* border: solid 2px #ee1e52; */
+    border: solid 2px #f57653;
     -moz-border-radius: 40px;
     -webkit-border-radius: 40px;
     border-radius: 40px;
     display: inline-block;
     text-transform: uppercase;
-    background-color: #ee1e52
+    /* background-color: #ee1e52; */
+    background-color: #f57653
 }
 
 .btn-fill:hover,
 .btn-fill:focus {
     color: #fff;
-    background-color: #d3b56a;
-    border-color: #d3b56a
+    /* background-color: #d3b56a; */
+    background-color: #ee1e52;
+    /* border-color: #d3b56a */
+    border-color: #ee1e52
 }
 
 .btn-small {
@@ -100,6 +107,32 @@ h5 {
 
 .btn-margin-right {
     margin-right: 20px
+}
+
+/* #btn-show-map {
+    border: solid 2px #e9a28f;
+    background-color: transparent;
+    color:#e9a28f;
+} */
+
+/* #btn-show-map:hover,    
+#btn-show-map:focus {
+    background-color: #ee1e52;
+    border-color: #ee1e52;
+    color:#fff; 
+} */
+
+.btn-pink {
+    border: solid 2px #e9a28f;
+    /* background-color: #ffffffe8; */
+    background-color: transparent;
+    color:#e9a28f
+}
+.btn-pink:hover,    
+.btn-pink:focus {
+    background-color: #ee1e52;
+    border-color: #ee1e52;
+    color:#fff; 
 }
 
 section.intro,
@@ -581,7 +614,10 @@ ul .member-actions {
 #intro p {
     text-align: center;
     font-family: "Merriweather";
+    /* font-family: "Cookie"; */
+    /* font-family: "Parisienne"; */
     font-size: x-large;
+    /* font-size: 36px; */
     color: #3d4351;
     font-style: italic; 
 }
