@@ -167,7 +167,8 @@ section.blog {
 }
 
 a {
-    color: #ffeaea;
+    // color: #ffeaea;
+    color: #d3b56a;
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
     -webkit-transition-duration: 200ms;
@@ -178,7 +179,8 @@ a {
 
 a:hover,
 a:focus {
-    color: #d3b56a;
+    // color: #d3b56a;
+    color: #f57653;
     text-decoration: none
 }
 
