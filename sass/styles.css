@@ -133,6 +133,7 @@ h3 {
 
 h4 {
   font-size: 18px;
+  padding-top: 1rem;
 }
 
 h5 {
@@ -214,6 +215,19 @@ h5 {
     border-color: #ee1e52;
     color:#fff; 
 } */
+.btn-confirmacion {
+  border: solid 2px #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-confirmacion:hover,
+.btn-confirmacion:focus {
+  background-color: #ee1e52;
+  border-color: #ee1e52;
+  color: #fff;
+}
+
 .btn-pink {
   border: solid 2px #e9a28f;
   /* background-color: #ffffffe8; */
@@ -255,7 +269,7 @@ section.blog {
 }
 
 a {
-  color: #ffeaea;
+  color: #d3b56a;
   transition-timing-function: ease;
   transition-duration: 200ms;
   transition-property: color, border-color, background-color;
@@ -263,7 +277,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #d3b56a;
+  color: #f57653;
   text-decoration: none;
 }
 
@@ -507,7 +521,7 @@ section .header {
 
 .hero {
   min-height: 750px;
-  background: url("../img/hero-min.png") center center;
+  background: url("../img/hero-min_solofondo.png") center center;
   background-size: cover;
   position: relative;
 }
@@ -529,12 +543,12 @@ section .header {
 }
 
 .hero .hero-content {
-  padding-top: 40%;
+  padding-top: 20%;
 }
 
 .hero .hero-content img {
   width: 55%;
-  margin-bottom: 12%;
+  margin-bottom: 15%;
 }
 
 .navigation {
