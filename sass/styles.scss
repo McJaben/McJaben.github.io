@@ -205,6 +205,24 @@ body {
     -webkit-text-size-adjust: 100%
 }
 
+.text-center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Asegura que el contenedor tenga una altura definida */
+}
+
+.text-center-vertical p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+}
+
+.fotos-vertical {
+    flex-flow: inherit;
+}
+
+
 *:focus {
     outline: none !important
 }

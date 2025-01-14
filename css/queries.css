@@ -235,7 +235,11 @@
     }
 
     #map-content-wrapper {
-        margin-bottom: 40px;
+        margin-bottom: 180px;
+    }
+
+    #map-canvas {
+        height: 580px;
     }
     
     #map-content {
@@ -274,7 +278,7 @@
         right: 10px; }
 
     #map-content-wrapper {
-        margin-bottom: 0;
+        margin-bottom: 100px;
     }
     
     footer ul.footer-group {

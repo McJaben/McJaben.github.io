@@ -123,7 +123,7 @@ $(document).ready(function () {
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html,body').animate({
-                        scrollTop: target.offset().top - 90
+                        scrollTop: target.offset().top - 110
                     }, 2000);
                     return false;
                 }
@@ -131,6 +131,7 @@ $(document).ready(function () {
         });
 
     });
+    
 
     /********************** Social Share buttons ***********************/
     var share_bar = document.getElementsByClassName('share-bar');
