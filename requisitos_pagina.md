@@ -6,8 +6,11 @@
 [ x ] Fotos del compromiso.
 [  ] Lista de regalos + CBU/CVU.
 [  ] Componente Confirmación.
+[ x ] fix de fondo principal cortándose en mobile.
+[ x ] fix de sección de regalos encimándose en el mapa en mobile.
 
 
-// Falta fix de sección de regalos encimándose en el mapa en mobile.
 // Falta RSVP.
-// Falta fix de fondo principal cortándose en mobile.
+
+Para entender cómo funciona la clase que envía el mail
+https://developers.google.com/apps-script/reference/mail/mail-app?hl=es-419
