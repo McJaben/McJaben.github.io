@@ -465,6 +465,24 @@ Frase. -->
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div id="invitados-container">
+                <!-- Aquí se listarán los invitados -->
+              </div>
+              
+              <script>
+                document.addEventListener("DOMContentLoaded", async () => {
+                  const codigoInvitacion = getInviteCodeFromURL();
+                  if (!codigoInvitacion) {
+                    alert("El código de invitación no está en la URL.");
+                    return;
+                  }
+              
+                  const invitados = await fetchInvitados(codigoInvitacion);
+                  renderInvitados(invitados);
+                });
+              </script>              
+        </div>
     </div>
 </section>
 
@@ -485,7 +503,11 @@ Frase. -->
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
-<script src="js/scripts.min.js"></script>
+<!-- <script src="js/scripts.min.js"></script> -->
+<script src="js/scripts.js" defer></script>
+<script>
+    console.log(getInviteCodeFromURL());
+</script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
 <!-- Google Analytics -->

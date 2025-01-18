@@ -214,27 +214,29 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Boda de Brisa y Benja",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('March 09, 2025 12:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('March 09, 2025 20:00'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'Olascoaga y Percy Clark, Plottier, Neuquén',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "¡No podemos esperar a verte en nuestro gran día!"
         }
     });
 
     $('#add-to-cal').html(myCalendar);
+
+      
 
 
     /********************** RSVP **********************/
@@ -298,6 +300,68 @@ $(document).ready(function () {
 //         map: map
 //     });
 // }
+
+/***************** Confirmaciones de invitación ********************/
+    // Primero obtengo el código de invitación de la URL
+    function getInviteCodeFromURL() {
+        var params = new URLSearchParams(window.location.search);
+        return params.get("codigo_invitacion");
+    }
+    
+    // Consumo el endpoint de la API para listar los invitados
+    async function fetchInvitados(codigoInvitacion) {
+        var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec?codigo_invitacion=${codigoInvitacion}`;
+        var response = await fetch(url);
+        var data = await response.json();
+      
+        if (data.result === "success") {
+          return data.invitados;
+        } else {
+          alert(data.message);
+          return [];
+        }
+    }
+    
+    // Muestro los invitados en el HTML
+    function renderInvitados(invitados) {
+        var container = document.getElementById("invitados-container");
+        container.innerHTML = ""; // Limpia el contenido previo
+      
+        invitados.forEach((invitado) => {
+          var row = document.createElement("div");
+          row.innerHTML = `
+            <p>${invitado.invitado} (Grupo: ${invitado.grupo})</p>
+            <button onclick="updateConfirmacion('${invitado.id}', 'Confirmado')">Confirmar asistencia</button>
+            <button onclick="updateConfirmacion('${invitado.id}', 'No asistirá')">Confirmar inasistencia</button>
+            <button onclick="updateConfirmacion('${invitado.id}', 'Pendiente')">Marcar como pendiente</button>
+          `;
+          container.appendChild(row);
+        });
+    }
+      
+    // Envío solicitud POST a Google Scripts para registrar las confirmaciones
+    async function updateConfirmacion(id, confirmacion) {
+        var codigoInvitacion = getInviteCodeFromURL();
+        var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
+        var response = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            codigo_invitacion: codigoInvitacion,
+            id: id,
+            confirmacion: confirmacion
+          })
+        });
+      
+        var data = await response.json();
+        if (data.result === "success") {
+          alert("Confirmación actualizada correctamente.");
+          location.reload(); // Refresca la página para mostrar los cambios
+        } else {
+          alert(data.message);
+        }
+      }
+
 
 // alert_markup
 function alert_markup(alert_type, msg) {
