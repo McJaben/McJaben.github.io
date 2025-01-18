@@ -269,6 +269,10 @@
         width: 70%;
     }
 
+    .timebox {
+        gap: 50px;
+    }
+
     #eng-pics .img-wrap i {
         font-size: 25px;
         position: absolute;
@@ -326,6 +330,14 @@
         font-size: 50px;
     }
 
+    .timebox {
+        gap: 30px;
+    }
+
+    .time h2 {
+        font-size: 4rem;
+    }
+
     .btn-margin-right {
         margin-right: 0px;
     }
@@ -370,6 +382,14 @@
 @media screen and (max-width: 320px) {
     .hero .hero-content {
         padding-top: 130%;
+    }
+
+    .timebox {
+        gap: 20px;
+    }
+
+    .time h2 {
+        font-size: 3rem;
     }
 
     .rsvp {

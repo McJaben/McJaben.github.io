@@ -131,7 +131,40 @@ $(document).ready(function () {
         });
 
     });
-    
+
+    /*********************** Contador  *************************************/
+    // Fecha de la boda (configúrala)
+    var fechaBoda = new Date("2025-03-09T12:00:00").getTime();
+    var Dias = document.getElementById('days');
+    var Horas = document.getElementById('hours');
+    var Minutos = document.getElementById('minutes');
+    var Segundos = document.getElementById('seconds');
+
+    function actualizarCuentaAtras() {
+      var ahora = new Date().getTime();
+      var diferencia = fechaBoda - ahora;
+
+      if (diferencia < 0) {
+        document.getElementById("contador").innerText = "¡Felicidades, hoy es el día de la boda! 🎉";
+        return;
+      }
+
+      // Calcular días, horas, minutos y segundos
+      var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      var horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      // Mostrar el resultado
+      Dias.innerHTML = dias;
+      Horas.innerHTML = horas;
+      Minutos.innerHTML = minutos;
+      Segundos.innerHTML = segundos;
+      
+    }
+
+    // Actualizar cada segundo
+    setInterval(actualizarCuentaAtras, 1000);
 
     /********************** Social Share buttons ***********************/
     var share_bar = document.getElementsByClassName('share-bar');
