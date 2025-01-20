@@ -424,7 +424,6 @@ $(document).ready(function () {
             <thead>
                 <tr>
                     <th>Invitado</th>
-                    <th>Grupo</th>
                     <th>Confirmación</th>
                 </tr>
             </thead>
@@ -439,7 +438,6 @@ $(document).ready(function () {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${invitado.invitado}</td>
-                <td>${invitado.grupo}</td>
                 <td>
                     <div class="form-check">
                         <input type="radio" name="confirmacion-${index}" value="Confirmado" id="confirmado-${index}" class="form-check-input">
