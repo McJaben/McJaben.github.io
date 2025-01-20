@@ -213,6 +213,45 @@ section.blog {
   font-weight: 100;
 }
 
+// Para los invitados
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.form-check {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#submit-confirmation {
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+
 a {
     // color: #ffeaea;
     color: #d3b56a;

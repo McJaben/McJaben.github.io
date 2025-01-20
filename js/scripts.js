@@ -322,45 +322,184 @@ $(document).ready(function () {
         }
     }
     
-    // Muestro los invitados en el HTML
+    // // Muestro los invitados en el HTML
+    // function renderInvitados(invitados) {
+    //     var container = document.getElementById("invitados-container");
+    //     container.innerHTML = ""; // Limpia el contenido previo
+      
+    //     invitados.forEach((invitado) => {
+    //       var row = document.createElement("div");
+    //       row.innerHTML = `
+    //         <p>${invitado.invitado} (Grupo: ${invitado.grupo})</p>
+    //         <button onclick="updateConfirmacion('${invitado.id}', 'Confirmado')">Confirmar asistencia</button>
+    //         <button onclick="updateConfirmacion('${invitado.id}', 'No asistirá')">Confirmar inasistencia</button>
+    //         <button onclick="updateConfirmacion('${invitado.id}', 'Pendiente')">Marcar como pendiente</button>
+    //       `;
+    //       container.appendChild(row);
+    //     });
+    // }
+
+    // // Función para mostrar los invitados en una tabla
+    // function renderInvitados(invitados) {
+    //     const container = document.getElementById("invitados-container");
+    //     container.innerHTML = ""; // Limpia el contenido previo
+      
+    //     // Crear la tabla
+    //     const table = document.createElement("table");
+    //     table.className = "table table-striped";
+
+    //     // Crear encabezados
+    //     table.innerHTML = `
+    //         <thead>
+    //             <tr>
+    //                 <th>Invitado</th>
+    //                 <th>Grupo</th>
+    //                 <th>Confirmación</th>
+    //             </tr>
+    //         </thead>
+    //         <tbody>
+    //         </tbody>
+    //     `;
+
+    //     const tbody = table.querySelector("tbody");
+
+    //     // Crear una fila por cada invitado
+    //     invitados.forEach((invitado) => {
+    //         const row = document.createElement("tr");
+    //         row.innerHTML = `
+    //             <td>${invitado.invitado}</td>
+    //             <td>${invitado.grupo}</td>
+    //             <td>
+    //                 <select onchange="updateConfirmacion('${invitado.id}', this.value)">
+    //                     <option value="" disabled selected>Selecciona una opción</option>
+    //                     <option value="Confirmado">Confirmado</option>
+    //                     <option value="No asistirá">No asistirá</option>
+    //                     <option value="Pendiente">Pendiente</option>
+    //                 </select>
+    //             </td>
+    //         `;
+    //         tbody.appendChild(row);
+    //     });
+
+    //     container.appendChild(table);
+    // }
+      
+    // // Envío solicitud POST a Google Scripts para registrar las confirmaciones
+    // async function updateConfirmacion(id, confirmacion) {
+    //     if (!confirmacion) return;
+    //     var codigoInvitacion = getInviteCodeFromURL();
+    //     var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
+    //     var response = await fetch(url, {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //       body: new URLSearchParams({
+    //         codigo_invitacion: codigoInvitacion,
+    //         id: id,
+    //         confirmacion: confirmacion
+    //       })
+    //     });
+      
+    //     var data = await response.json();
+    //     if (data.result === "success") {
+    //     //   alert("Confirmación actualizada correctamente.");
+    //       $('#alert-wrapper').html('');
+    //       $('#rsvp-modal').modal('show');
+    //       location.reload(); // Refresca la página para mostrar los cambios
+    //     } else {
+    //       alert(data.message);
+    //     }
+    //   }
+
+    // Función para mostrar los invitados con radio buttons
     function renderInvitados(invitados) {
-        var container = document.getElementById("invitados-container");
+        const container = document.getElementById("invitados-container");
         container.innerHTML = ""; // Limpia el contenido previo
-      
-        invitados.forEach((invitado) => {
-          var row = document.createElement("div");
-          row.innerHTML = `
-            <p>${invitado.invitado} (Grupo: ${invitado.grupo})</p>
-            <button onclick="updateConfirmacion('${invitado.id}', 'Confirmado')">Confirmar asistencia</button>
-            <button onclick="updateConfirmacion('${invitado.id}', 'No asistirá')">Confirmar inasistencia</button>
-            <button onclick="updateConfirmacion('${invitado.id}', 'Pendiente')">Marcar como pendiente</button>
-          `;
-          container.appendChild(row);
+        
+        // Crear la tabla
+        const table = document.createElement("table");
+        table.className = "table table-striped";
+
+        // Crear encabezados
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Invitado</th>
+                    <th>Grupo</th>
+                    <th>Confirmación</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        `;
+
+        const tbody = table.querySelector("tbody");
+
+        // Crear una fila por cada invitado con opciones de radio
+        invitados.forEach((invitado, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${invitado.invitado}</td>
+                <td>${invitado.grupo}</td>
+                <td>
+                    <div class="form-check">
+                        <input type="radio" name="confirmacion-${index}" value="Confirmado" id="confirmado-${index}" class="form-check-input">
+                        <label for="confirmado-${index}" class="form-check-label">Asistirá</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="confirmacion-${index}" value="No asistirá" id="no-asistira-${index}" class="form-check-input">
+                        <label for="no-asistira-${index}" class="form-check-label">No asistirá</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="confirmacion-${index}" value="Pendiente" id="pendiente-${index}" class="form-check-input" checked>
+                        <label for="pendiente-${index}" class="form-check-label">Pendiente</label>
+                    </div>
+                </td>
+            `;
+            row.setAttribute("data-id", invitado.id);
+            tbody.appendChild(row);
         });
+
+        container.appendChild(table);
+
+        // Mostrar el botón de "Enviar respuestas"
+        document.getElementById("submit-confirmation").style.display = "block";
     }
-      
-    // Envío solicitud POST a Google Scripts para registrar las confirmaciones
-    async function updateConfirmacion(id, confirmacion) {
-        var codigoInvitacion = getInviteCodeFromURL();
-        var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
-        var response = await fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({
-            codigo_invitacion: codigoInvitacion,
-            id: id,
-            confirmacion: confirmacion
-          })
+
+    // Función para enviar todas las confirmaciones
+    async function submitConfirmations() {
+        const codigoInvitacion = getInviteCodeFromURL();
+        const rows = document.querySelectorAll("#invitados-container tr");
+        const url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
+        const updates = [];
+
+        // Recorre todas las filas y recoge los valores seleccionados
+        rows.forEach((row) => {
+            const id = row.getAttribute("data-id");
+            const selectedOption = row.querySelector("input[type='radio']:checked");
+            const confirmacion = selectedOption ? selectedOption.value : "Pendiente";
+
+            updates.push(
+                fetch(url, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams({
+                        codigo_invitacion: codigoInvitacion,
+                        id: id,
+                        confirmacion: confirmacion
+                    })
+                }).then((response) => response.json())
+            );
         });
-      
-        var data = await response.json();
-        if (data.result === "success") {
-          alert("Confirmación actualizada correctamente.");
-          location.reload(); // Refresca la página para mostrar los cambios
+
+        // Espera a que se completen todas las solicitudes
+        const results = await Promise.all(updates);
+        if (results.every((res) => res.result === "success")) {
+            alert("Confirmaciones enviadas correctamente.");
+            location.reload();
         } else {
-          alert(data.message);
+            alert("Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.");
         }
-      }
+    }
 
 
 // alert_markup

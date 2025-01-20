@@ -492,9 +492,10 @@ Frase. -->
             <h3>¿Qué estás esperando?</h3>
             <div id="invitados-container">
                 <!-- Aquí se listarán los invitados -->
-              </div>
+            </div>
+            <button id="submit-confirmation" class="btn btn-primary mt-3" style="display: none;" onclick="submitConfirmations()">Enviar respuestas</button>
               
-              <script>
+            <script>
                 document.addEventListener("DOMContentLoaded", async () => {
                   const codigoInvitacion = getInviteCodeFromURL();
                   if (!codigoInvitacion) {
@@ -505,7 +506,7 @@ Frase. -->
                   const invitados = await fetchInvitados(codigoInvitacion);
                   renderInvitados(invitados);
                 });
-              </script>              
+            </script>              
         </div>
     </div>
 </section>
