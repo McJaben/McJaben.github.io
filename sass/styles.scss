@@ -166,8 +166,17 @@ section.rsvp {
 
 section.features,
 section.codigo_vestimenta,
+section.lista-regalos,
 section.blog {
     background: #f8f9fd
+}
+
+.p-0 {
+    padding-bottom: 0%;
+}
+
+.p-20 {
+    padding-top: 20px;
 }
 
 .group:after {
@@ -504,8 +513,8 @@ section .header {
 
 .hero {
     min-height: 750px;
-    // background: url("../img/hero-min.png") center center;
-    background: url("../img/hero-min_solofondo.png") center center;
+    // background: url("../img/hero-min_solofondo.png") center center;
+    background: url("../img/hero_fondo.png") center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -534,7 +543,7 @@ section .header {
 }
 
 .hero .hero-content img {
-    width: 75%;
+    width: 80%;
     margin-bottom: 30%
 }
 
@@ -577,7 +586,7 @@ header .logo {
     display: inline-block;
     background-color: white; /* O el color que elijas */
     border-radius: 50%; /* Para crear un círculo */
-    padding: 10px;
+    padding: 6px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra opcional */
 }
 
@@ -1054,7 +1063,7 @@ ul .member-actions {
 #map-content-wrapper {
     position: relative;
     margin-top: -502px;
-    margin-bottom: 150px
+    margin-bottom: 130px    
 }
 
 #map-content {

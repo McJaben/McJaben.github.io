@@ -23,7 +23,7 @@ Frase. -->
     <meta property="og:title" content="¡Brisa y Benja se casan!">
     <meta property="og:description" content="Nos gustaría invitarte a nuestro gran día.">
     <!-- <meta property="og:image" content="/img/hero-min.jpg"> -->
-    <meta property="og:image" content="/img/hero-min_solofondo.png">
+    <meta property="og:image" content="/img/hero_fondo.png">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -103,7 +103,7 @@ Frase. -->
                 <div class="hero-content text-center">
                     <!-- <h1>Brisa y Benja</h1> -->
                     <!-- <img src="img/logo.png"> -->
-                    <img src="img/logo_nuevo_final.png">
+                    <img src="img/logo_final.png" alt="Brisa y Benja">
                 </div>
             </div>
         </div>
@@ -216,7 +216,7 @@ Frase. -->
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                     </button>
-                    <h3 class="text-center section-padding">Uff... ¿códigos de vestimenta?</h3>
+                    <h3 class="text-center section-padding">Código de vestimenta</h3>
                     <h5>Boda</h5>
                     <p>
                         <strong>Estilo Cocktail</strong>
@@ -327,14 +327,6 @@ Frase. -->
             <div class="col-xs-12 section-border section-padding"></div>
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-md-12">
-            <div class="diamond floating-logo">
-                <img src="img/sketch-logo.png" alt="Sketch Logo">
-                <div class="ring"></div>
-            </div>
-        </div>
-    </div>-->
 </section>
 
 <!-- TODO: En mobile se rompe y se encima la sección de los regalos sobre el mapa -->
@@ -389,20 +381,92 @@ Frase. -->
     });
 </script>
 
-<section id="lista-regalos" class="section-padding">
+<!-- <section id="lista-regalos" class="section-padding">
+    <div class="container">
+    </div>
+</section> -->
+
+
+<section class="lista-regalos section-padding" id="lista-regalos">
     <div class="container">
         <div class="row text-center-vertical">
-            <div class="col-md-12 text-center">
+            <div class="col-md-6 text-center">
                 <h3>Lista de regalos</h3>
+                <p class="p-0">
+                    Con inmensa alegría queremos invitarte a celebrar nuestro casamiento 🎉.
+                </p>
                 <p>
-                    Su presencia en nuestro día es el mejor regalo que podríamos recibir. Estamos muy ilusionados con la idea de construir 
-                    nuestro hogar, y si desean ser parte de este sueño, hemos creado una lista de regalos con opciones para contribuir a la 
-                    compra de materiales. ¡Cada ladrillo cuenta!
+                    Tu presencia será el mejor regalo, pero si deseas acompañarnos con algo especial,
+                    hemos preparado lo siguiente:
                 </p>
             </div>
         </div>
+        <div class="row p-20 text-center-vertical">
+            <div class="col-md-4">
+                <a class="btn btn-accent btn-small btn-pink" data-toggle="modal" data-target="#regalos-modal">
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Regalos
+                </a>
+            </div>
+        </div>
     </div>
+
+    <div id="regalos-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Lista de regalos</h3>
+                    <h5>Corralón Comahue</h5>
+                    <p class="p-0">
+                        <strong>
+                            ¿Cómo participar?  
+                        </strong> 
+                    </p>
+                    <p class="p-0">
+                        1️⃣ Acércate a *Corralón Comahue* en San Martín 2803.  
+                        <br>
+                        2️⃣ Pregunta por la vendedora *Katy*.  
+                        <br>
+                        3️⃣ Indica los datos de la lista: el nombre y la palabra clave.  
+                    </p>
+                    <p class="p-0">
+                        ¡También podés hacerlo online comunicandote al siguiente 
+                        <a href="https://api.whatsapp.com/send/?phone=5492995529486&text&type=phone_number&app_absent=0" target="_blank"> WhatsApp</a>!
+                    </p>
+                    <p class="p-0">
+                       <strong>
+                           Datos de nuestra lista:  
+                        </strong>
+                        
+                    </p>
+                    <p class="p-0">
+                        📝 Lista: (01332611) GONZÁLEZ BRISA  
+                        <br>
+                        🔑 Palabra clave: Avisa Envío - Cemento Acopio  
+                    </p>
+                    <hr>
+                    <strong>
+                        ¡Otra forma de colaborar!
+                    </strong>
+                    <p class="p-0">
+                        Realiza una transferencia a nuestra cuenta:
+                        <br>
+                        <strong>CBU:</strong> 4530000800017609567106
+                        <br>
+                        <strong>Alias:</strong> brisaybenjanx
+                    </p>
+                    <p class="p-0">
+                        ¡Gracias por ser parte de este momento único en nuestras vidas! ❤️✨
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </section>
+
+
 
 
 <section class="rsvp text-center" id="rsvp">
@@ -419,54 +483,13 @@ Frase. -->
                         <div id="add-to-cal"></div>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row text-center-vertical">
-            <div class="col-md-12">
-                <h3>¿Qué estás esperando?</h3>
-                <!-- <p>Vamos a estar muy agradecidos si puedes confirmar tu asistencia antes del 10 de febrero de 2025</p> -->
-                <!-- <form id="rsvp-form" class="rsvp-form" action="" method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class="" placeholder="Your email"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class="" placeholder="Tu nombre" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0" max="4"
-                                    placeholder="Husband/Wife or kids" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code" class="" min="0"
-                                    placeholder="Invite code" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        ¡Sí,
-                        ese soy yo!
-                    </button>
-                </form> -->
-            </div>
-        </div>
-        <div class="row text-center-vertical">
+            <h3>¿Qué estás esperando?</h3>
             <div id="invitados-container">
                 <!-- Aquí se listarán los invitados -->
               </div>
