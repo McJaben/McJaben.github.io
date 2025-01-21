@@ -302,6 +302,94 @@ $(document).ready(function () {
 // }
 
 /***************** Confirmaciones de invitación ********************/
+// // Muestro los invitados en el HTML
+// function renderInvitados(invitados) {
+//     var container = document.getElementById("invitados-container");
+//     container.innerHTML = ""; // Limpia el contenido previo
+  
+//     invitados.forEach((invitado) => {
+//       var row = document.createElement("div");
+//       row.innerHTML = `
+//         <p>${invitado.invitado} (Grupo: ${invitado.grupo})</p>
+//         <button onclick="updateConfirmacion('${invitado.id}', 'Confirmado')">Confirmar asistencia</button>
+//         <button onclick="updateConfirmacion('${invitado.id}', 'No asistirá')">Confirmar inasistencia</button>
+//         <button onclick="updateConfirmacion('${invitado.id}', 'Pendiente')">Marcar como pendiente</button>
+//       `;
+//       container.appendChild(row);
+//     });
+// }
+
+// // Función para mostrar los invitados en una tabla
+// function renderInvitados(invitados) {
+//     const container = document.getElementById("invitados-container");
+//     container.innerHTML = ""; // Limpia el contenido previo
+  
+//     // Crear la tabla
+//     const table = document.createElement("table");
+//     table.className = "table table-striped";
+
+//     // Crear encabezados
+//     table.innerHTML = `
+//         <thead>
+//             <tr>
+//                 <th>Invitado</th>
+//                 <th>Grupo</th>
+//                 <th>Confirmación</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//         </tbody>
+//     `;
+
+//     const tbody = table.querySelector("tbody");
+
+//     // Crear una fila por cada invitado
+//     invitados.forEach((invitado) => {
+//         const row = document.createElement("tr");
+//         row.innerHTML = `
+//             <td>${invitado.invitado}</td>
+//             <td>${invitado.grupo}</td>
+//             <td>
+//                 <select onchange="updateConfirmacion('${invitado.id}', this.value)">
+//                     <option value="" disabled selected>Selecciona una opción</option>
+//                     <option value="Confirmado">Confirmado</option>
+//                     <option value="No asistirá">No asistirá</option>
+//                     <option value="Pendiente">Pendiente</option>
+//                 </select>
+//             </td>
+//         `;
+//         tbody.appendChild(row);
+//     });
+
+//     container.appendChild(table);
+// }
+  
+// // Envío solicitud POST a Google Scripts para registrar las confirmaciones
+// async function updateConfirmacion(id, confirmacion) {
+//     if (!confirmacion) return;
+//     var codigoInvitacion = getInviteCodeFromURL();
+//     var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
+//     var response = await fetch(url, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+//       body: new URLSearchParams({
+//         codigo_invitacion: codigoInvitacion,
+//         id: id,
+//         confirmacion: confirmacion
+//       })
+//     });
+  
+//     var data = await response.json();
+//     if (data.result === "success") {
+//     //   alert("Confirmación actualizada correctamente.");
+//       $('#alert-wrapper').html('');
+//       $('#rsvp-modal').modal('show');
+//       location.reload(); // Refresca la página para mostrar los cambios
+//     } else {
+//       alert(data.message);
+//     }
+//   }
+
     // Primero obtengo el código de invitación de la URL
     function getInviteCodeFromURL() {
         var params = new URLSearchParams(window.location.search);
@@ -322,93 +410,6 @@ $(document).ready(function () {
         }
     }
     
-    // // Muestro los invitados en el HTML
-    // function renderInvitados(invitados) {
-    //     var container = document.getElementById("invitados-container");
-    //     container.innerHTML = ""; // Limpia el contenido previo
-      
-    //     invitados.forEach((invitado) => {
-    //       var row = document.createElement("div");
-    //       row.innerHTML = `
-    //         <p>${invitado.invitado} (Grupo: ${invitado.grupo})</p>
-    //         <button onclick="updateConfirmacion('${invitado.id}', 'Confirmado')">Confirmar asistencia</button>
-    //         <button onclick="updateConfirmacion('${invitado.id}', 'No asistirá')">Confirmar inasistencia</button>
-    //         <button onclick="updateConfirmacion('${invitado.id}', 'Pendiente')">Marcar como pendiente</button>
-    //       `;
-    //       container.appendChild(row);
-    //     });
-    // }
-
-    // // Función para mostrar los invitados en una tabla
-    // function renderInvitados(invitados) {
-    //     const container = document.getElementById("invitados-container");
-    //     container.innerHTML = ""; // Limpia el contenido previo
-      
-    //     // Crear la tabla
-    //     const table = document.createElement("table");
-    //     table.className = "table table-striped";
-
-    //     // Crear encabezados
-    //     table.innerHTML = `
-    //         <thead>
-    //             <tr>
-    //                 <th>Invitado</th>
-    //                 <th>Grupo</th>
-    //                 <th>Confirmación</th>
-    //             </tr>
-    //         </thead>
-    //         <tbody>
-    //         </tbody>
-    //     `;
-
-    //     const tbody = table.querySelector("tbody");
-
-    //     // Crear una fila por cada invitado
-    //     invitados.forEach((invitado) => {
-    //         const row = document.createElement("tr");
-    //         row.innerHTML = `
-    //             <td>${invitado.invitado}</td>
-    //             <td>${invitado.grupo}</td>
-    //             <td>
-    //                 <select onchange="updateConfirmacion('${invitado.id}', this.value)">
-    //                     <option value="" disabled selected>Selecciona una opción</option>
-    //                     <option value="Confirmado">Confirmado</option>
-    //                     <option value="No asistirá">No asistirá</option>
-    //                     <option value="Pendiente">Pendiente</option>
-    //                 </select>
-    //             </td>
-    //         `;
-    //         tbody.appendChild(row);
-    //     });
-
-    //     container.appendChild(table);
-    // }
-      
-    // // Envío solicitud POST a Google Scripts para registrar las confirmaciones
-    // async function updateConfirmacion(id, confirmacion) {
-    //     if (!confirmacion) return;
-    //     var codigoInvitacion = getInviteCodeFromURL();
-    //     var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
-    //     var response = await fetch(url, {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //       body: new URLSearchParams({
-    //         codigo_invitacion: codigoInvitacion,
-    //         id: id,
-    //         confirmacion: confirmacion
-    //       })
-    //     });
-      
-    //     var data = await response.json();
-    //     if (data.result === "success") {
-    //     //   alert("Confirmación actualizada correctamente.");
-    //       $('#alert-wrapper').html('');
-    //       $('#rsvp-modal').modal('show');
-    //       location.reload(); // Refresca la página para mostrar los cambios
-    //     } else {
-    //       alert(data.message);
-    //     }
-    //   }
 
     // Función para mostrar los invitados con radio buttons
     function renderInvitados(invitados) {
@@ -475,18 +476,19 @@ $(document).ready(function () {
             const id = row.getAttribute("data-id");
             const selectedOption = row.querySelector("input[type='radio']:checked");
             const confirmacion = selectedOption ? selectedOption.value : "Pendiente";
-
-            updates.push(
-                fetch(url, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams({
-                        codigo_invitacion: codigoInvitacion,
-                        id: id,
-                        confirmacion: confirmacion
-                    })
-                }).then((response) => response.json())
-            );
+            if (id) {
+                updates.push(
+                    fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams({
+                            codigo_invitacion: codigoInvitacion,
+                            id: id,
+                            confirmacion: confirmacion
+                        })
+                    }).then((response) => response.json())
+                );
+            }
         });
 
         // Espera a que se completen todas las solicitudes
@@ -500,10 +502,10 @@ $(document).ready(function () {
     }
 
 
-// alert_markup
-function alert_markup(alert_type, msg) {
-    return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
-}
+// // alert_markup
+// function alert_markup(alert_type, msg) {
+//     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
+// }
 
 // MD5 Encoding
 var MD5 = function (string) {
