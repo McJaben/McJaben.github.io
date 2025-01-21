@@ -494,12 +494,17 @@ Frase. -->
                 <!-- Aquí se listarán los invitados -->
             </div>
             <button id="submit-confirmation" class="btn btn-small btn-pink mt-3" style="display: none;" onclick="submitConfirmations()">Enviar respuestas</button>
-              
+            <div id="add-to-cal"></div>
             <script>
                 document.addEventListener("DOMContentLoaded", async () => {
                   const codigoInvitacion = getInviteCodeFromURL();
                   if (!codigoInvitacion) {
-                    alert("El código de invitación no está en la URL.");
+                    // alert("El código de invitación no está en la URL.");
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'El código de invitación no está en la URL.',
+                        icon: 'error'
+                    });
                     return;
                   }
               
@@ -509,7 +514,6 @@ Frase. -->
             </script>              
         </div>
     </div>
-    <div id="alert-wrapper" class="mt-3"></div>
 </section>
 
 <footer>
@@ -529,8 +533,16 @@ Frase. -->
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
-<!-- <script src="js/scripts.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+<script src="sweetalert2.all.min.js">
+    Sweet.alert({
+        title: 'Error',
+        text: 'El código de invitación no está en la URL.',
+        icon: 'error'
+    });
+</script>
 <script src="js/scripts.js" defer></script>
+<!-- <script src="js/scripts.min.js"></script> -->
 <script>
     console.log(getInviteCodeFromURL());
 </script>

@@ -166,33 +166,33 @@ $(document).ready(function () {
     // Actualizar cada segundo
     setInterval(actualizarCuentaAtras, 1000);
 
-    /********************** Social Share buttons ***********************/
-    var share_bar = document.getElementsByClassName('share-bar');
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
+    // /********************** Social Share buttons ***********************/
+    // var share_bar = document.getElementsByClassName('share-bar');
+    // var po = document.createElement('script');
+    // po.type = 'text/javascript';
+    // po.async = true;
+    // po.src = 'https://apis.google.com/js/platform.js';
+    // var s = document.getElementsByTagName('script')[0];
+    // s.parentNode.insertBefore(po, s);
 
-    for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
-            'style="width:105px; height:21px;">' +
-            '</iframe>' +
+    // for (var i = 0; i < share_bar.length; i++) {
+    //     var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
+    //         'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
+    //         'style="width:105px; height:21px;">' +
+    //         '</iframe>' +
 
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
+    //         '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
 
-            '<div class="g-plusone" data-size="medium"></div>';
+    //         '<div class="g-plusone" data-size="medium"></div>';
 
-        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
+    //     // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
 
-        share_bar[i].innerHTML = html;
-        share_bar[i].style.display = 'inline-block';
-    }
+    //     share_bar[i].innerHTML = html;
+    //     share_bar[i].style.display = 'inline-block';
+    // }
 
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
+    // /********************** Embed youtube video *********************/
+    // $('.player').YTPlayer();
 
 
     /********************** Toggle Map Content **********************/
@@ -206,66 +206,66 @@ $(document).ready(function () {
     });
 
     /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
-            title: "Boda de Brisa y Benja",
+    // var myCalendar = createCalendar({
+    //     options: {
+    //         class: '',
+    //         // You can pass an ID. If you don't, one will be generated for you
+    //         id: ''
+    //     },
+    //     data: {
+    //         // Event title
+    //         title: "Boda de Brisa y Benja",
 
-            // Event start date
-            start: new Date('March 09, 2025 12:00'),
+    //         // Event start date
+    //         start: new Date('March 09, 2025 12:00'),
 
-            // Event duration (IN MINUTES)
-            // duration: 120,
+    //         // Event duration (IN MINUTES)
+    //         // duration: 120,
 
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-            end: new Date('March 09, 2025 20:00'),
+    //         // You can also choose to set an end time
+    //         // If an end time is set, this will take precedence over duration
+    //         // end: new Date('March 09, 2025 20:00'),
 
-            // Event Address
-            address: 'Olascoaga y Percy Clark, Plottier, Neuquén',
+    //         // Event Address
+    //         address: 'Olascoaga y Percy Clark, Plottier, Neuquén',
 
-            // Event Description
-            description: "¡No podemos esperar a verte en nuestro gran día!"
-        }
-    });
+    //         // Event Description
+    //         description: "¡No podemos esperar a verte en nuestro gran día!"
+    //     }
+    // });
 
-    $('#add-to-cal').html(myCalendar);
+    // $('#add-to-cal').html(myCalendar);
 
       
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
+    // $('#rsvp-form').on('submit', function (e) {
+    //     e.preventDefault();
+    //     var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>¡Espere un segundo!</strong> Estamos guardando los detalles.'));
+    //     $('#alert-wrapper').html(alert_markup('info', '<strong>¡Espere un segundo!</strong> Estamos guardando los detalles.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>¡Disculpas!</strong> Su código de invitado es incorrecto.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
-    });
+    //     if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
+    //         && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+    //         $('#alert-wrapper').html(alert_markup('danger', '<strong>¡Disculpas!</strong> Su código de invitado es incorrecto.'));
+    //     } else {
+    //         $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
+    //             .done(function (data) {
+    //                 console.log(data);
+    //                 if (data.result === "error") {
+    //                     $('#alert-wrapper').html(alert_markup('danger', data.message));
+    //                 } else {
+    //                     $('#alert-wrapper').html('');
+    //                     $('#rsvp-modal').modal('show');
+    //                 }
+    //             })
+    //             .fail(function (data) {
+    //                 console.log(data);
+    //                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+    //             });
+    //     }
+    // });
 
 });
 
@@ -418,7 +418,8 @@ $(document).ready(function () {
         
         // Crear la tabla
         const table = document.createElement("table");
-        table.className = "table table-striped";
+        // table.className = "table table-striped";
+        table.className = "table styled-table";
 
         // Crear encabezados
         table.innerHTML = `
@@ -462,6 +463,24 @@ $(document).ready(function () {
 
         // Mostrar el botón de "Enviar respuestas"
         document.getElementById("submit-confirmation").style.display = "block";
+        document.getElementById("submit-confirmation").addEventListener("click", () => {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás cambiar tus respuestas después de enviarlas.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#e28d7a',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, enviar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Aquí ejecutas el envío de las respuestas
+                    submitConfirmations(); // Asegúrate de tener esta función definida
+                }
+            });
+        });
+        
     }
 
     // Función para enviar todas las confirmaciones
@@ -494,13 +513,24 @@ $(document).ready(function () {
         // Espera a que se completen todas las solicitudes
         const results = await Promise.all(updates);
         if (results.every((res) => res.result === "success")) {
-            alert("Confirmaciones enviadas correctamente.");
+            Swal.fire({
+                title: '¡Listo!',
+                text: 'Tus confirmaciones han sido enviadas con éxito.',
+                icon: 'success'
+            })
+            // alert("Confirmaciones enviadas correctamente.");
             location.reload();
         } else {
-            alert("Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.");
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.',
+                icon: 'error'
+            })
+            // alert("Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.");
         }
     }
 
+// var Swal = require('sweetalert2');
 
 // // alert_markup
 // function alert_markup(alert_type, msg) {
