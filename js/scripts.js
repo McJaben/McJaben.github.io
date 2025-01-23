@@ -131,35 +131,68 @@ $(document).ready(function () {
         });
 
     });
-    
 
-    /********************** Social Share buttons ***********************/
-    var share_bar = document.getElementsByClassName('share-bar');
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
+    /*********************** Contador  *************************************/
+    // Fecha de la boda (configúrala)
+    var fechaBoda = new Date("2025-03-09T12:00:00").getTime();
+    var Dias = document.getElementById('days');
+    var Horas = document.getElementById('hours');
+    var Minutos = document.getElementById('minutes');
+    var Segundos = document.getElementById('seconds');
 
-    for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
-            'style="width:105px; height:21px;">' +
-            '</iframe>' +
+    function actualizarCuentaAtras() {
+      var ahora = new Date().getTime();
+      var diferencia = fechaBoda - ahora;
 
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
+      if (diferencia < 0) {
+        document.getElementById("contador").innerText = "¡Felicidades, hoy es el día de la boda! 🎉";
+        return;
+      }
 
-            '<div class="g-plusone" data-size="medium"></div>';
+      // Calcular días, horas, minutos y segundos
+      var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      var horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
-
-        share_bar[i].innerHTML = html;
-        share_bar[i].style.display = 'inline-block';
+      // Mostrar el resultado
+      Dias.innerHTML = dias;
+      Horas.innerHTML = horas;
+      Minutos.innerHTML = minutos;
+      Segundos.innerHTML = segundos;
+      
     }
 
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
+    // Actualizar cada segundo
+    setInterval(actualizarCuentaAtras, 1000);
+
+    // /********************** Social Share buttons ***********************/
+    // var share_bar = document.getElementsByClassName('share-bar');
+    // var po = document.createElement('script');
+    // po.type = 'text/javascript';
+    // po.async = true;
+    // po.src = 'https://apis.google.com/js/platform.js';
+    // var s = document.getElementsByTagName('script')[0];
+    // s.parentNode.insertBefore(po, s);
+
+    // for (var i = 0; i < share_bar.length; i++) {
+    //     var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
+    //         'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
+    //         'style="width:105px; height:21px;">' +
+    //         '</iframe>' +
+
+    //         '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
+
+    //         '<div class="g-plusone" data-size="medium"></div>';
+
+    //     // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
+
+    //     share_bar[i].innerHTML = html;
+    //     share_bar[i].style.display = 'inline-block';
+    // }
+
+    // /********************** Embed youtube video *********************/
+    // $('.player').YTPlayer();
 
 
     /********************** Toggle Map Content **********************/
@@ -173,64 +206,66 @@ $(document).ready(function () {
     });
 
     /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
-            title: "Ram and Antara's Wedding",
+    // var myCalendar = createCalendar({
+    //     options: {
+    //         class: '',
+    //         // You can pass an ID. If you don't, one will be generated for you
+    //         id: ''
+    //     },
+    //     data: {
+    //         // Event title
+    //         title: "Boda de Brisa y Benja",
 
-            // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+    //         // Event start date
+    //         start: new Date('March 09, 2025 12:00'),
 
-            // Event duration (IN MINUTES)
-            // duration: 120,
+    //         // Event duration (IN MINUTES)
+    //         // duration: 120,
 
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+    //         // You can also choose to set an end time
+    //         // If an end time is set, this will take precedence over duration
+    //         // end: new Date('March 09, 2025 20:00'),
 
-            // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+    //         // Event Address
+    //         address: 'Olascoaga y Percy Clark, Plottier, Neuquén',
 
-            // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
-        }
-    });
+    //         // Event Description
+    //         description: "¡No podemos esperar a verte en nuestro gran día!"
+    //     }
+    // });
 
-    $('#add-to-cal').html(myCalendar);
+    // $('#add-to-cal').html(myCalendar);
+
+      
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
+    // $('#rsvp-form').on('submit', function (e) {
+    //     e.preventDefault();
+    //     var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>¡Espere un segundo!</strong> Estamos guardando los detalles.'));
+    //     $('#alert-wrapper').html(alert_markup('info', '<strong>¡Espere un segundo!</strong> Estamos guardando los detalles.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>¡Disculpas!</strong> Su código de invitado es incorrecto.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
-    });
+    //     if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
+    //         && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+    //         $('#alert-wrapper').html(alert_markup('danger', '<strong>¡Disculpas!</strong> Su código de invitado es incorrecto.'));
+    //     } else {
+    //         $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
+    //             .done(function (data) {
+    //                 console.log(data);
+    //                 if (data.result === "error") {
+    //                     $('#alert-wrapper').html(alert_markup('danger', data.message));
+    //                 } else {
+    //                     $('#alert-wrapper').html('');
+    //                     $('#rsvp-modal').modal('show');
+    //                 }
+    //             })
+    //             .fail(function (data) {
+    //                 console.log(data);
+    //                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+    //             });
+    //     }
+    // });
 
 });
 
@@ -266,10 +301,264 @@ $(document).ready(function () {
 //     });
 // }
 
-// alert_markup
-function alert_markup(alert_type, msg) {
-    return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
-}
+/***************** Confirmaciones de invitación ********************/
+// // Muestro los invitados en el HTML
+// function renderInvitados(invitados) {
+//     var container = document.getElementById("invitados-container");
+//     container.innerHTML = ""; // Limpia el contenido previo
+  
+//     invitados.forEach((invitado) => {
+//       var row = document.createElement("div");
+//       row.innerHTML = `
+//         <p>${invitado.invitado} (Grupo: ${invitado.grupo})</p>
+//         <button onclick="updateConfirmacion('${invitado.id}', 'Confirmado')">Confirmar asistencia</button>
+//         <button onclick="updateConfirmacion('${invitado.id}', 'No asistirá')">Confirmar inasistencia</button>
+//         <button onclick="updateConfirmacion('${invitado.id}', 'Pendiente')">Marcar como pendiente</button>
+//       `;
+//       container.appendChild(row);
+//     });
+// }
+
+// // Función para mostrar los invitados en una tabla
+// function renderInvitados(invitados) {
+//     const container = document.getElementById("invitados-container");
+//     container.innerHTML = ""; // Limpia el contenido previo
+  
+//     // Crear la tabla
+//     const table = document.createElement("table");
+//     table.className = "table table-striped";
+
+//     // Crear encabezados
+//     table.innerHTML = `
+//         <thead>
+//             <tr>
+//                 <th>Invitado</th>
+//                 <th>Grupo</th>
+//                 <th>Confirmación</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//         </tbody>
+//     `;
+
+//     const tbody = table.querySelector("tbody");
+
+//     // Crear una fila por cada invitado
+//     invitados.forEach((invitado) => {
+//         const row = document.createElement("tr");
+//         row.innerHTML = `
+//             <td>${invitado.invitado}</td>
+//             <td>${invitado.grupo}</td>
+//             <td>
+//                 <select onchange="updateConfirmacion('${invitado.id}', this.value)">
+//                     <option value="" disabled selected>Selecciona una opción</option>
+//                     <option value="Confirmado">Confirmado</option>
+//                     <option value="No asistirá">No asistirá</option>
+//                     <option value="Pendiente">Pendiente</option>
+//                 </select>
+//             </td>
+//         `;
+//         tbody.appendChild(row);
+//     });
+
+//     container.appendChild(table);
+// }
+  
+// // Envío solicitud POST a Google Scripts para registrar las confirmaciones
+// async function updateConfirmacion(id, confirmacion) {
+//     if (!confirmacion) return;
+//     var codigoInvitacion = getInviteCodeFromURL();
+//     var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
+//     var response = await fetch(url, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+//       body: new URLSearchParams({
+//         codigo_invitacion: codigoInvitacion,
+//         id: id,
+//         confirmacion: confirmacion
+//       })
+//     });
+  
+//     var data = await response.json();
+//     if (data.result === "success") {
+//     //   alert("Confirmación actualizada correctamente.");
+//       $('#alert-wrapper').html('');
+//       $('#rsvp-modal').modal('show');
+//       location.reload(); // Refresca la página para mostrar los cambios
+//     } else {
+//       alert(data.message);
+//     }
+//   }
+
+    // Primero obtengo el código de invitación de la URL
+    function getInviteCodeFromURL() {
+        var params = new URLSearchParams(window.location.search);
+        return params.get("codigo_invitacion");
+    }
+    
+    // Consumo el endpoint de la API para listar los invitados
+    async function fetchInvitados(codigoInvitacion) {
+        var url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec?codigo_invitacion=${codigoInvitacion}`;
+        var response = await fetch(url);
+        var data = await response.json();
+      
+        if (data.result === "success") {
+          return data.invitados;
+        } else {
+          alert(data.message);
+          return [];
+        }
+    }
+    
+
+    // Función para mostrar los invitados con radio buttons
+    function renderInvitados(invitados) {
+        const container = document.getElementById("invitados-container");
+        container.innerHTML = ""; // Limpia el contenido previo
+        
+        // Crear la tabla
+        const table = document.createElement("table");
+        // table.className = "table table-striped";
+        table.className = "table styled-table";
+
+        // Crear encabezados
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Invitado</th>
+                    <th>Confirmación</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        `;
+
+        const tbody = table.querySelector("tbody");
+
+        // Crear una fila por cada invitado con opciones de radio
+        invitados.forEach((invitado, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${invitado.invitado}</td>
+                <td>
+                    <div class="form-check">
+                        <input type="radio" name="confirmacion-${index}" value="Confirmado" id="confirmado-${index}" class="form-check-input">
+                        <label for="confirmado-${index}" class="form-check-label">Asistirá</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="confirmacion-${index}" value="No asistirá" id="no-asistira-${index}" class="form-check-input">
+                        <label for="no-asistira-${index}" class="form-check-label">No asistirá</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="confirmacion-${index}" value="Pendiente" id="pendiente-${index}" class="form-check-input" checked>
+                        <label for="pendiente-${index}" class="form-check-label">Pendiente</label>
+                    </div>
+                </td>
+            `;
+            row.setAttribute("data-id", invitado.id);
+            tbody.appendChild(row);
+        });
+
+        container.appendChild(table);
+
+        // Mostrar el botón de "Enviar respuestas"
+        document.getElementById("submit-confirmation").style.display = "block";
+        document.getElementById("submit-confirmation").addEventListener("click", () => {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Se guardarán tus respuestas y se dará aviso a los novios.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#e28d7a',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, enviar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Aquí ejecutas el envío de las respuestas
+                    submitConfirmations(); // Asegúrate de tener esta función definida
+                } else {
+                    Swal.fire({
+                        title: 'Cancelado',
+                        text: 'Tus respuestas no han sido enviadas.',
+                        icon: 'cancel'
+                    });
+                }
+            });
+        });
+        
+    }
+
+    // Función para enviar todas las confirmaciones
+    async function submitConfirmations() {
+        const codigoInvitacion = getInviteCodeFromURL();
+        const rows = document.querySelectorAll("#invitados-container tr");
+        const url = `https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec`;
+        const updates = [];
+
+        // Recorre todas las filas y recoge los valores seleccionados
+        rows.forEach((row) => {
+            const id = row.getAttribute("data-id");
+            const selectedOption = row.querySelector("input[type='radio']:checked");
+            const confirmacion = selectedOption ? selectedOption.value : "Pendiente";
+            if (id) {
+                updates.push(
+                    fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams({
+                            codigo_invitacion: codigoInvitacion,
+                            id: id,
+                            confirmacion: confirmacion
+                        })
+                    }).then((response) => response.json())
+                );
+            }
+        });
+
+        // Espera a que se completen todas las solicitudes
+        const results = await Promise.all(updates);
+        if (results.every((res) => res.result === "success")) {
+            Swal.fire({
+                title: '¡Listo!',
+                text: 'Tus confirmaciones han sido enviadas con éxito.',
+                icon: 'success',
+                confirmButtonColor: '#e28d7a',
+                confirmButtonText: 'Ok',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const heartIcon = 
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" fill="currentColor"/></svg>';
+                    Swal.fire({
+                        title: '¡Gracias!',
+                        iconHtml: heartIcon,
+                        iconColor: '#e28d7a',
+                        confirmButtonColor: '#d17b68',
+                        timer: 3500,
+                    });
+                }
+                // setTimeout(3000);
+                // location.reload();
+            });
+
+            // alert("Confirmaciones enviadas correctamente.");
+            // location.reload();
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.',
+                icon: 'error'
+            });
+            // alert("Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.");
+        }
+    }
+
+// var Swal = require('sweetalert2');
+
+// // alert_markup
+// function alert_markup(alert_type, msg) {
+//     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
+// }
 
 // MD5 Encoding
 var MD5 = function (string) {

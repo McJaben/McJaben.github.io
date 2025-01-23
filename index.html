@@ -23,7 +23,7 @@ Frase. -->
     <meta property="og:title" content="¡Brisa y Benja se casan!">
     <meta property="og:description" content="Nos gustaría invitarte a nuestro gran día.">
     <!-- <meta property="og:image" content="/img/hero-min.jpg"> -->
-    <meta property="og:image" content="/img/hero-min_solofondo.png">
+    <meta property="og:image" content="/img/hero_fondo.png" loading="lazy">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -76,12 +76,12 @@ Frase. -->
     <section class="navigation">
         <header>
             <div class="header-content">
-                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
+                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo" loading="lazy"></a></div>
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
-                            <li><a href="#intro">Inicio</a></li>
-                            <li><a href="#itinerario">Código de vestimenta</a></li>
+                            <li><a href="#invitation">Inicio</a></li>
+                            <li><a href="#codigo_vestimenta">Código de vestimenta</a></li>
                             <li><a href="#instagram">Álbum para recuerdos</a></li>
                             <li><a href="#eng-pics">Compromiso</a></li>
                         </ul>
@@ -102,9 +102,8 @@ Frase. -->
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
                     <!-- <h1>Brisa y Benja</h1> -->
-                    <img src="img/logo.png">
-                    <!-- <p class="intro">¡Brisa y Benja se casan!</p> -->
-                    <!-- <a href="#" class="btn btn-fill btn-large btn-margin-right">Desliza hacia abajo</a> -->
+                    <!-- <img src="img/logo.png"> -->
+                    <img src="img/logo_final.png" alt="Brisa y Benja" loading="lazy">
                 </div>
             </div>
         </div>
@@ -128,6 +127,29 @@ Frase. -->
                 <h4>La fecha es el <strong>09 de marzo del 2025</strong> a las <strong>12hs</strong> y nos gustaría que seas parte.</h4>
             </div>
         </div>
+        <div class="row text-center-vertical">
+            <h3>¡Cuenta atrás para nuestra boda! 💒</h3>
+            <div class="text-center" id="contador">
+                <div class="timebox">
+                    <div class="time">
+                        <h2 id="days">00</h2>
+                        <p>Días</p>
+                    </div>
+                    <div class="time">
+                        <h2 id="hours">00</h2>
+                        <p>Horas</p>
+                    </div>
+                    <div class="time">
+                        <h2 id="minutes">00</h2>
+                        <p>Minutos</p>
+                    </div>
+                    <div class="time">
+                        <h2 id="seconds">00</h2>
+                        <p>Segundos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -142,7 +164,8 @@ Frase. -->
             <div class="col-md-3 hidden-sm hidden-xs">
                 <!-- <img src="img/IMG_2317.jpg" class="wp1"> -->
                 <!-- <img src="img/flores/flores_japonesas_rosas.png" class="wp1"> -->
-                <img src="img/flores/otras_flores_rosas_invertido.png" class="wp1">
+                <!-- <img src="img/flores/otras_flores_rosas_invertido.png" class="wp1" loading="lazy"> -->
+                <img src="img/flores/otras_flores_rosas_invertido.webp" class="wp1" loading="lazy">
             </div>
             <div class="col-md-6 text-center-vertical">
                 <p>
@@ -155,15 +178,15 @@ Frase. -->
             </div>
             <div class="col-md-3 hidden-sm hidden-xs">
                 <!-- <img src="img/DSD_0214.jpg" class="wp2"> -->
-                <img src="img/flores/otras_flores_rosas.png" class="wp2">
+                <!-- <img src="img/flores/otras_flores_rosas.png" class="wp2" loading="lazy"> -->
+                <img src="img/flores/otras_flores_rosas.webp" class="wp2" loading="lazy">
             </div>
         </div>
         <div class="row">
             <!-- <div class="col-sm-4 col-sm-push-2 col-xs-12 hidden-md hidden-lg"> -->
             <div class="col-sm-8 col-sm-push-2 col-xs-12 hidden-md hidden-lg">
-                <!-- <img src="img/flores/flores_japonesas_rosas.png" class="wp8"> -->
-                <img src="img/flores/mas_flores.png" class="wp8">
-                <!-- <img src="img/IMG_2317.jpg" class="wp8"> -->
+                <!-- <img src="img/flores/mas_flores.png" class="wp8" loading="lazy"> -->
+                <img src="img/flores/mas_flores.webp" class="wp8" loading="lazy">
             </div>
             <!-- <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg">
                 <img src="img/flores/otras_flores_rosas.png" class="wp9">
@@ -173,52 +196,8 @@ Frase. -->
     </div>
 </section>
 
-<section class="itinerario section-padding" id="itinerario">
+<section class="codigo_vestimenta section-padding" id="codigo_vestimenta">
     <div class="container">
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <h3 class="header">Itinerario</h3>
-            </div>
-        </div> -->
-        <!-- <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
-                <div class="wp3">
-                    <p><strong>27th November</strong></p>
-
-                    <h5>Mehndi <span class="time">1PM - 5PM</span></h5>
-                    <p>It's one of the oldest traditional Indian pre wedding ceremony where the bride and groom
-                        attend the event together and a professional mehndi artist applies
-                        mehndi to the bride's hands and feet. This will be having a celebratory
-                        festival feel to it with people wearing vibrant clothes and dancing, singing, playing
-                        games and a lot more.</p>
-                </div>
-                <div class="wp5">
-                    <h5>Cocktail Night <span class="time">7PM - 12AM</span></h5>
-                    <p>This event is no way close to ethnic. The bride & groom would like to have some "shots before the
-                        knot". With booze flowing down the floor and the western attire on, everyone would be busy
-                        showing off their new moves on the stage which they have finely honed. Lastly, expect some beer
-                        pong matches & karaoke for sure.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
-                <div class="wp4">
-                    <p><strong>28th November</strong></p>
-
-                    <h5>Haldi <span class="time">10AM-11AM</span></h5>
-                    <p>The haldi ceremony is usually held separately for the bride and the groom. This one is for the
-                        bride. It is a low-key event that involves the application of turmeric paste on the hands, legs
-                        and face of the bride. The groom is not allowed to see the bride after this ritual until the
-                        final wedding ceremony starts.</p>
-                </div>
-                <div class="wp6">
-                    <h5>Wedding <span class="time">6PM-12AM</span></h5>
-                    <p>This is the main event in the entire wedding when the bride and the groom tie the
-                        knot. The groom comes with the barat and is greeted by the bride side with some dhol of course
-                        as maximum number of guests would be attending this event. This is when the couple circle the
-                        sacred fire and are finally declared husband and wife.</p>
-                </div>
-            </div>
-        </div> -->
         <div class="row section-padding text-center-vertical">
             <div class="col-md-4">
                 <a class="btn btn-accent btn-small btn-pink" data-toggle="modal" data-target="#dc-modal">
@@ -238,7 +217,7 @@ Frase. -->
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                     </button>
-                    <h3 class="text-center section-padding">Uff... ¿códigos de vestimenta?</h3>
+                    <h3 class="text-center section-padding">Código de vestimenta</h3>
                     <h5>Boda</h5>
                     <p>
                         <strong>Estilo Cocktail</strong>
@@ -268,7 +247,7 @@ Frase. -->
         </div>
         <div class="row section-border wp7">
             <div class="col-md-4 col-md-offset-4">
-                <img src="img/iphone_instagram.png"> <!-- cambiar por foto nuestra -->
+                <img src="img/iphone_instagram.png" loading="lazy"> <!-- cambiar por foto nuestra -->
             </div>
         </div>
     </div>
@@ -283,62 +262,62 @@ Frase. -->
         </div>
         <div class="row fotos-vertical">
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/5-lg.jpeg">
+                <a class="fancybox" rel="group" href="img/eng_pics/5-lg.webp" loading="lazy">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img/eng_pics/5-sm.jpeg" alt=""/>
+                        <img src="img/eng_pics/5-sm.webp" loading="lazy" alt=""/>
                     </div>
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/3-lg.jpg">
+                <a class="fancybox" rel="group" href="img/eng_pics/3-lg.webp" loading="lazy">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img/eng_pics/3-sm.jpg" alt=""/>
+                        <img src="img/eng_pics/3-sm.webp" loading="lazy" alt=""/>
                     </div>
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/1-lg.jpg">
+                <a class="fancybox" rel="group" href="img/eng_pics/1-lg.webp" loading="lazy">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img/eng_pics/1-sm.jpg" alt=""/>
+                        <img src="img/eng_pics/1-sm.webp" loading="lazy" alt=""/>
                     </div>
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/4-lg.jpg">
+                <a class="fancybox" rel="group" href="img/eng_pics/4-lg.webp" loading="lazy">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img/eng_pics/4-sm.jpg" alt=""/>
+                        <img src="img/eng_pics/4-sm.webp" loading="lazy" alt=""/>
                     </div>
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/2-lg.jpeg">
+                <a class="fancybox" rel="group" href="img/eng_pics/2-lg.webp" loading="lazy">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img/eng_pics/2-sm.jpeg" alt=""/>
+                        <img src="img/eng_pics/2-sm.webp" loading="lazy" alt=""/>
                     </div>
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/8-lg.jpg">
+                <a class="fancybox" rel="group" href="img/eng_pics/8-lg.webp" loading="lazy">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img/eng_pics/8-sm.jpg" alt=""/>
+                        <img src="img/eng_pics/8-sm.webp" loading="lazy" alt=""/>
                     </div>
                 </a>
             </div>
@@ -349,14 +328,6 @@ Frase. -->
             <div class="col-xs-12 section-border section-padding"></div>
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-md-12">
-            <div class="diamond floating-logo">
-                <img src="img/sketch-logo.png" alt="Sketch Logo">
-                <div class="ring"></div>
-            </div>
-        </div>
-    </div>-->
 </section>
 
 <!-- TODO: En mobile se rompe y se encima la sección de los regalos sobre el mapa -->
@@ -411,20 +382,92 @@ Frase. -->
     });
 </script>
 
-<section id="lista-regalos" class="section-padding">
+<!-- <section id="lista-regalos" class="section-padding">
+    <div class="container">
+    </div>
+</section> -->
+
+
+<section class="lista-regalos section-padding" id="lista-regalos">
     <div class="container">
         <div class="row text-center-vertical">
-            <div class="col-md-12 text-center">
+            <div class="col-md-6 text-center">
                 <h3>Lista de regalos</h3>
+                <p class="p-0">
+                    Con inmensa alegría queremos invitarte a celebrar nuestro casamiento 🎉.
+                </p>
                 <p>
-                    Su presencia en nuestro día es el mejor regalo que podríamos recibir. Estamos muy ilusionados con la idea de construir 
-                    nuestro hogar, y si desean ser parte de este sueño, hemos creado una lista de regalos con opciones para contribuir a la 
-                    compra de materiales. ¡Cada ladrillo cuenta!
+                    Tu presencia será el mejor regalo, pero si deseas acompañarnos con algo especial,
+                    hemos preparado lo siguiente:
                 </p>
             </div>
         </div>
+        <div class="row p-20 text-center-vertical">
+            <div class="col-md-4">
+                <a class="btn btn-accent btn-small btn-pink" data-toggle="modal" data-target="#regalos-modal">
+                    <i class="fa fa-gift"></i>&nbsp;&nbsp;Regalos
+                </a>
+            </div>
+        </div>
     </div>
+
+    <div id="regalos-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Lista de regalos</h3>
+                    <h5>Corralón Comahue</h5>
+                    <p class="p-0">
+                        <strong>
+                            ¿Cómo participar?  
+                        </strong> 
+                    </p>
+                    <p class="p-0">
+                        1️⃣ Acércate a *Corralón Comahue* en San Martín 2803.  
+                        <br>
+                        2️⃣ Pregunta por la vendedora *Katy*.  
+                        <br>
+                        3️⃣ Indica los datos de la lista: el nombre y la palabra clave.  
+                    </p>
+                    <p class="p-0">
+                        ¡También podés hacerlo online comunicandote al siguiente 
+                        <a href="https://api.whatsapp.com/send/?phone=5492995529486&text&type=phone_number&app_absent=0" target="_blank"> WhatsApp</a>!
+                    </p>
+                    <p class="p-0">
+                       <strong>
+                           Datos de nuestra lista:  
+                        </strong>
+                        
+                    </p>
+                    <p class="p-0">
+                        📝 Lista: (01332611) GONZÁLEZ BRISA  
+                        <br>
+                        🔑 Palabra clave: Avisa Envío - Cemento Acopio  
+                    </p>
+                    <hr>
+                    <strong>
+                        ¡Otra forma de colaborar!
+                    </strong>
+                    <p class="p-0">
+                        Realiza una transferencia a nuestra cuenta:
+                        <br>
+                        <strong>CBU:</strong> 4530000800017609567106
+                        <br>
+                        <strong>Alias:</strong> brisaybenjanx
+                    </p>
+                    <p class="p-0">
+                        ¡Gracias por ser parte de este momento único en nuestras vidas! ❤️✨
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </section>
+
+
 
 
 <section class="rsvp text-center" id="rsvp">
@@ -441,52 +484,41 @@ Frase. -->
                         <div id="add-to-cal"></div>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>¿Qué estás esperando?</h3>
-                <p>Vamos a estar muy agradecidos si puedes confirmar tu asistencia antes del 10 de febrero de 2025</p>
-                <form id="rsvp-form" class="rsvp-form" action="" method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class="" placeholder="Your email"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class="" placeholder="Tu nombre" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row"> <!-- se rompe el flex -->
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0" max="4"
-                                    placeholder="Husband/Wife or kids" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code" class="" min="0"
-                                    placeholder="Invite code" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        ¡Sí,
-                        ese soy yo!
-                    </button>
-                </form>
+        <div class="row text-center-vertical">
+            <h3>¿Qué estás esperando?</h3>
+            <div id="invitados-container">
+                <!-- Aquí se listarán los invitados -->
             </div>
+            <button 
+                id="submit-confirmation" 
+                class="btn btn-small btn-pink mt-3" 
+                style="display: none;"
+                >
+                Enviar respuestas
+            </button>
+            <div id="add-to-cal"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", async () => {
+                  const codigoInvitacion = getInviteCodeFromURL();
+                  if (!codigoInvitacion) {
+                    // alert("El código de invitación no está en la URL.");
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'El código de invitación no está en la URL.',
+                        icon: 'error'
+                    });
+                    return;
+                  }
+              
+                  const invitados = await fetchInvitados(codigoInvitacion);
+                  renderInvitados(invitados);
+                });
+            </script>              
         </div>
     </div>
 </section>
@@ -508,9 +540,9 @@ Frase. -->
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
-<script src="js/scripts.min.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+<script src="js/scripts.js" defer></script>
+<!-- <script src="js/scripts.min.js"></script> -->
 <!-- Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {

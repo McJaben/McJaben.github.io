@@ -27,7 +27,7 @@ Aquí tienes una guía paso a paso para lograrlo:
 
 ```javascript
 function doGet(e) {
-  var sheet = SpreadsheetApp.openById('TU_ID_DE_HOJA_DE_CÁLCULO').getSheetByName('NombreDeTuHoja');
+  var sheet = SpreadsheetApp.openById('TU_ID_DE_HOJA_DE_CÁLCULO').getSheetByName('Invitados_confirmaciones');
   var data = sheet.getDataRange().getValues();
   var json = JSON.stringify(data);
   return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
@@ -242,3 +242,14 @@ https://tu-pagina-web.com/invitacion.html?codigo=ABC123
 ```
 
 Con esta estructura, cada grupo de invitados tendrá un link único que les permitirá ver a todos los integrantes de su grupo y confirmar, rechazar o marcar su asistencia como pendiente.
+
+
+Id Google Sheets:
+1go9mJzzN_Ns4ciBJWO2ZekXnoaTr9rYc2vFp299KVa0/edit?gid=0#gid=0
+
+Id Google Scripts:
+AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V
+
+
+URL Script:
+https://script.google.com/macros/s/AKfycbxGdA8ynY_IuDD7q4F7yVjpWnI3e-d1iAdSZkypWYihCkihxnokN98iEefmTbGEZ9_V/exec
