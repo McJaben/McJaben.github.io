@@ -466,7 +466,7 @@ $(document).ready(function () {
         document.getElementById("submit-confirmation").addEventListener("click", () => {
             Swal.fire({
                 title: '¿Estás seguro?',
-                text: "No podrás cambiar tus respuestas después de enviarlas.",
+                text: "Se guardarán tus respuestas y se dará aviso a los novios.",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#e28d7a',
@@ -477,6 +477,12 @@ $(document).ready(function () {
                 if (result.isConfirmed) {
                     // Aquí ejecutas el envío de las respuestas
                     submitConfirmations(); // Asegúrate de tener esta función definida
+                } else {
+                    Swal.fire({
+                        title: 'Cancelado',
+                        text: 'Tus respuestas no han sido enviadas.',
+                        icon: 'cancel'
+                    });
                 }
             });
         });
@@ -516,16 +522,33 @@ $(document).ready(function () {
             Swal.fire({
                 title: '¡Listo!',
                 text: 'Tus confirmaciones han sido enviadas con éxito.',
-                icon: 'success'
-            })
+                icon: 'success',
+                confirmButtonColor: '#e28d7a',
+                confirmButtonText: 'Ok',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const heartIcon = 
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" fill="currentColor"/></svg>';
+                    Swal.fire({
+                        title: '¡Gracias!',
+                        iconHtml: heartIcon,
+                        iconColor: '#e28d7a',
+                        confirmButtonColor: '#d17b68',
+                        timer: 3500,
+                    });
+                }
+                // setTimeout(3000);
+                // location.reload();
+            });
+
             // alert("Confirmaciones enviadas correctamente.");
-            location.reload();
+            // location.reload();
         } else {
             Swal.fire({
                 title: 'Error',
                 text: 'Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.',
                 icon: 'error'
-            })
+            });
             // alert("Hubo un problema con algunas confirmaciones. Por favor, intenta de nuevo.");
         }
     }
